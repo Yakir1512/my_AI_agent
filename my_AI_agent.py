@@ -1,0 +1,2 @@
+
+print("smart stuff")
