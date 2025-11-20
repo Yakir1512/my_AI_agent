@@ -1,0 +1,1 @@
+normal window of an app that askes to give a topic and it will return a joke

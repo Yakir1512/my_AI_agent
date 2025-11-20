@@ -27,7 +27,6 @@ class first_App(App):
         self.layout.add_widget(self.output)
         return self.layout
 
-
     def get_joke(self, instance):
         topic = self.input.text
         print("what kind of a joke u want")
