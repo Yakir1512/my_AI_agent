@@ -5,6 +5,7 @@ from kivy.uix.button import Button
 from kivy.uix.label import Label
 from openai import OpenAI
 from dotenv import load_dotenv
+import view
 import os
 
 load_dotenv() 
@@ -14,18 +15,8 @@ client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 class first_App(App):
     def build(self):
-        self.layout = BoxLayout(orientation="vertical", padding=20, spacing=10)
-
-        self.input = TextInput(hint_text="Enter a joke topic")
-        self.output = Label(text="Your joke will appear here")
-
-        btn = Button(text="Get Joke")
-        btn.bind(on_press=self.get_joke)
-
-        self.layout.add_widget(self.input)
-        self.layout.add_widget(btn)
-        self.layout.add_widget(self.output)
-        return self.layout
+        self.view = view(self)
+        return self.view
 
     def get_joke(self, instance):
         topic = self.input.text
